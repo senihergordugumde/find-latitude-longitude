@@ -30,15 +30,28 @@ def find_latitude_longitude(analiz_sutun, api): # analiz_sutun() fonksiyonunda t
     print(df)
 
 
-dosyanin_Adi = str(input("Excel Dosyasının Yolunu Girin: "))
-dosya = pd.read_excel("Calisma_Sayfasi1.xlsx")  # Tablonuzun konumunu girin
-
-api = "YOUR API KEY" # Google api keyi giriniz!!!!!
 
 
+input_Api = input("Google API key giriniz: ")
+api = input_Api # Google api keyi giriniz!!!!!
+
+while True:
+
+  try:
+    dosyanin_Adi = str(input("Excel Dosyasının Yolunu Girin: "))
+    dosya = pd.read_excel(dosyanin_Adi)  # Tablonuzun konumunu girin
+
+    df = pd.DataFrame(dosya)
+
+    print(df.head())
+    break
+  except FileNotFoundError:
+    print("Dosya Bulunamadı")
 
 
-sutunun_adi = str(input("Verilerin Olduğu Sütunun Adını Girin: "))
+sutunun_adi = str(input("Adres Verilerin Olduğu Sütunun Adını Girin: "))
+
+print("Sütun Bulunamadı")
 
 
 find_latitude_longitude(analiz_sutun(sutunun_adi), api)
