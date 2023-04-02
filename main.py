@@ -29,6 +29,22 @@ def find_latitude_longitude(analiz_sutun, api): # analiz_sutun() fonksiyonunda t
 
     print(df)
 
+    while True:
+
+      try:
+        yesNo = str(input("Sonucu Excel Tablosu Olarak İster Misiniz? [E/H]"))
+
+        if (yesNo == "E"):
+          outputName = input("Dosyanın Adı Ne Olsun?")
+          df.to_excel(outputName+".xlsx") 
+          print("Dosyanız Oluşturuldu!" + outputName+".xlsx")
+          break
+
+        elif (yesNo == "H"):
+          break
+
+      except NameError:
+        print("Geçersiz Seçim")
 
 
 
