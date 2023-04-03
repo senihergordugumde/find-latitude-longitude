@@ -67,7 +67,6 @@ while True:
 
 sutunun_adi = str(input("Adres Verilerin Olduğu Sütunun Adını Girin: "))
 
-print("Sütun Bulunamadı")
 
 
 find_latitude_longitude(analiz_sutun(sutunun_adi), api)
