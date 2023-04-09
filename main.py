@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1qgjlLDDfnfkNVNvSEIcfPkrRaJIwbGD0
 """
 
-
 import geocoder
 import pandas as pd
 
@@ -30,10 +29,6 @@ def find_latitude_longitude(analiz_sutun, api): # analiz_sutun() fonksiyonunda t
       
         g = geocoder.google(i , key = api )
         latitude_longitude.append(g.latlng)
-        
-        
-
-        
         print(i)
         baraj_adi.append(i)
 
@@ -48,10 +43,6 @@ def find_latitude_longitude(analiz_sutun, api): # analiz_sutun() fonksiyonunda t
         longitude.append(None)
         x += 1
        
-
-       
-
-
     data = { "Location":baraj_adi, "Latitude":latitude, "Longitude": longitude}
     df = pd.DataFrame(data)
     print("---------------------------------")
@@ -101,4 +92,3 @@ print("---------------------------------")
 
 
 find_latitude_longitude(analiz_sutun(sutunun_adi), api)
-
