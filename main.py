@@ -83,7 +83,8 @@ while True:
     break
   except FileNotFoundError:
     print("Dosya Bulunamadı")
-
+  except IsADirectoryError:
+      print("Bu bir klasör. Lütfen dosya yolu girin.")
 
 sutunun_adi = str(input("Adres Verilerin Olduğu Sütunun Adını Girin: "))
 ek = str(input("Eklemek istediğiniz bir ek var mı? Örneğin ('...Barajı', '...Yolu', '...Parkı') YOKSA BOŞ BIRAKIN : "))
